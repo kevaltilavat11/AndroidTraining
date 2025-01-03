@@ -8,66 +8,87 @@
     android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@color/backgroundColor">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/headerId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/header_text"
-                android:textColor="@color/headerColor"
-                android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                />
-        </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="24dp">
-        <EditText
-            android:id="@+id/UserNameId"
+        android:padding="16dp">
+
+        <!-- Center Top Header -->
+        <TextView
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/header_text"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- User Information Fields -->
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:hint="@string/user_placeholder"
-            android:inputType="textPersonName"
-            android:padding="12dp" />
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/UserEmailId"
+            android:id="@+id/user_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:hint="@string/userEmail_placeholder"
-            android:inputType="textEmailAddress"
-            android:padding="12dp"
-            android:layout_marginTop="12dp" />
+            android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/UserPasswordId"
+            android:id="@+id/user_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:hint="@string/userPassword_placeholder"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:layout_marginTop="12dp" />
+            android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/ContactNumberId"
+            android:id="@+id/contact_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/userContact_placeholder"
-            android:inputType="phone"
-            android:padding="12dp"
-            android:layout_marginTop="12dp" />
-    </LinearLayout>
+            android:inputType="phone" />
+
+        <!-- Number Picker for Age -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp">
+
+            <TextView
+                android:id="@+id/age_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/age_placeholder"
+                android:textSize="16sp" />
+
+            <NumberPicker
+                android:id="@+id/age_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <!-- Next Button -->
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:text="@string/Next_btn"
+            android:onClick="validateDetails"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

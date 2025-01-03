@@ -5,4 +5,8 @@
     <string name="userEmail_placeholder">User Email</string>
     <string name="userPassword_placeholder">User Password</string>
     <string name="userContact_placeholder">Contact Number</string>
+    <string name="age_placeholder">Select Age:</string>
+    <string name="Next_btn">Next</string>
+    <string name="valid_fields">All fields are required!</string>
+
 </resources>
