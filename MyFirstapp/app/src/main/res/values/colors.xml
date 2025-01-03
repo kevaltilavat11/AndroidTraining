@@ -5,4 +5,6 @@
     <color name="backgroundColor">#e6fffa</color>
     <color name="headerColor">#b30000</color>
     <color name="buttonColor">#ffb3b3</color>
+    <color name="greyColor">#f2f2f2</color>
+
 </resources>

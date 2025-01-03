@@ -8,5 +8,11 @@
     <string name="age_placeholder">Select Age:</string>
     <string name="Next_btn">Next</string>
     <string name="valid_fields">All fields are required!</string>
+    <string name="valid_username">username field cannot be empty</string>
+    <string name="valid_email">Invalid Email Address!</string>
+    <string name="valid_password">Password must be at least 6 characters!</string>
+    <string name="valid_contactNumber">Contact Number must be 10 digits!</string>
+    <string name="login_text">Login</string>
+
 
 </resources>

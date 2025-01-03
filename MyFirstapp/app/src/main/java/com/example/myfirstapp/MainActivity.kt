@@ -6,7 +6,7 @@ import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.NumberPicker
-import android.widget.Toast
+import android.content.Intent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        val agePicker = findViewById<NumberPicker>(R.id.age_picker)
+        agePicker.minValue = 18  // Set minimum value
+        agePicker.maxValue = 100 // Set maximum value
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -35,17 +38,22 @@ class MainActivity : AppCompatActivity() {
         val passwordText = password.text.toString().trim { it <= ' ' }
         val contactNumberText = contactNumber.text.toString().trim { it <= ' ' }
         val age = agePicker.value
-        if (usernameText.isEmpty() || emailText.isEmpty() || passwordText.isEmpty() || contactNumberText.isEmpty()) {
-            Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show()
+        if (usernameText.isEmpty() && emailText.isEmpty() && contactNumberText.isEmpty() && contactNumberText.isEmpty()) {
+            username.setError(getString(R.string.valid_fields));
+            email.setError(getString(R.string.valid_fields))
+            password.setError(getString(R.string.valid_fields))
+            contactNumber.setError(getString(R.string.valid_fields))
+        } else if (usernameText.isEmpty()) {
+            username.setError(getString(R.string.valid_username));
         } else if (!Patterns.EMAIL_ADDRESS.matcher(emailText).matches()) {
-            Toast.makeText(this, "Invalid Email Address!", Toast.LENGTH_SHORT).show()
+            email.setError(getString(R.string.valid_email))
         } else if (passwordText.length < 6) {
-            Toast.makeText(this, "Password must be at least 6 characters!", Toast.LENGTH_SHORT)
-                .show()
+            password.setError(getString(R.string.valid_password))
         } else if (contactNumberText.length != 10) {
-            Toast.makeText(this, "Contact Number must be 10 digits!", Toast.LENGTH_SHORT).show()
+            contactNumber.setError(getString(R.string.valid_contactNumber))
         } else {
-            Toast.makeText(this, "Details are valid!", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
         }
     }
 
