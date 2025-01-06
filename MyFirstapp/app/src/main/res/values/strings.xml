@@ -13,6 +13,12 @@
     <string name="valid_password">Password must be at least 6 characters!</string>
     <string name="valid_contactNumber">Contact Number must be 10 digits!</string>
     <string name="login_text">Login</string>
-
+    <string name="password_text">Password</string>
+    <string name="authorize_text">Authorize</string>
+    <string name="info_text">By Using Grant Type Password you will not able to use User Management</string>
+    <string name="info1_text">admin@cpi.com</string>
+    <string name="info2_text">Admin@123</string>
+    <string name="info3_text">9a117930b32f43c084775639fc8f6728</string>
+    <string name="info4_text">K8REuZ3bnxsFpSGQpExM4CtjBTmGwPWF</string>
 
 </resources>
