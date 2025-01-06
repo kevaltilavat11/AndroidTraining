@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
-            android:text="top"
+            android:text="Top"
             android:onClick="topClick"
             />
         <LinearLayout
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:onClick="centerClick"
-            android:text="center" />
+            android:text="Center View" />
             <RelativeLayout
                 android:id="@+id/bottom_container"
                 android:layout_width="wrap_content"
@@ -87,6 +87,6 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:onClick="bottomClick"
-            android:text="bottom" />
+            android:text="Bottom" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
