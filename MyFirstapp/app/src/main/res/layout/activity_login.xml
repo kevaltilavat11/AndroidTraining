@@ -60,9 +60,9 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="-5dp"
+                    android:layout_marginBottom="-7dp"
                     android:inputType="textPersonName"
-                    android:paddingVertical="16dp"
+                    android:paddingVertical="18dp"
                     android:theme="@style/CustomEditText"
 
                     />
@@ -76,7 +76,7 @@
                     android:layout_marginHorizontal="12dp"
                     android:background="@drawable/icon_border"
                     android:contentDescription="Icon"
-                    android:padding="12dp"
+                    android:padding="14dp"
                     android:src="@drawable/baseline_search_24" />
         </RelativeLayout>
         <RelativeLayout
@@ -88,9 +88,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="-5dp"
+                android:layout_marginBottom="-7dp"
                 android:inputType="textPassword"
-                android:paddingVertical="16dp"
+                android:paddingVertical="20dp"
                 android:paddingHorizontal="10dp"
                 android:textSize="16dp"
                 android:hint="@string/password_text"
@@ -141,8 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:paddingVertical="12dp"
-                android:textColor="@color/borderColor"
+                android:paddingVertical="18dp"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info1_text"
                 android:textSize="14sp"
@@ -162,11 +161,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:paddingVertical="12dp"
-                android:textColor="@color/borderColor"
+                android:paddingVertical="18dp"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info2_text"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
         </RelativeLayout>
         <RelativeLayout
@@ -183,11 +181,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:paddingVertical="12dp"
+                android:paddingVertical="18dp"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info3_text"
-                android:textColor="@color/borderColor"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
         </RelativeLayout>
         <RelativeLayout
@@ -204,11 +201,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
-                android:paddingVertical="12dp"
+                android:paddingVertical="18dp"
                 android:paddingHorizontal="10dp"
-                android:textColor="@color/borderColor"
                 android:text="@string/info4_text"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:textStyle="normal" />
         </RelativeLayout>
         <TextView
@@ -216,7 +212,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/icon_border"
-            android:paddingVertical="12dp"
+            android:paddingVertical="18dp"
             android:layout_marginVertical="20dp"
             android:paddingHorizontal="80dp"
             android:layout_centerVertical="true"
