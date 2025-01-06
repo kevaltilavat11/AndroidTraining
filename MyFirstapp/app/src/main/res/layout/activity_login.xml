@@ -142,6 +142,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:paddingVertical="12dp"
+                android:textColor="@color/borderColor"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info1_text"
                 android:textSize="14sp"
@@ -162,6 +163,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="10dp"
                 android:paddingVertical="12dp"
+                android:textColor="@color/borderColor"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info2_text"
                 android:textSize="14sp"
@@ -184,6 +186,7 @@
                 android:paddingVertical="12dp"
                 android:paddingHorizontal="10dp"
                 android:text="@string/info3_text"
+                android:textColor="@color/borderColor"
                 android:textSize="14sp"
                 android:textStyle="normal" />
         </RelativeLayout>
@@ -203,6 +206,7 @@
                 android:layout_marginStart="10dp"
                 android:paddingVertical="12dp"
                 android:paddingHorizontal="10dp"
+                android:textColor="@color/borderColor"
                 android:text="@string/info4_text"
                 android:textSize="14sp"
                 android:textStyle="normal" />
@@ -220,7 +224,7 @@
             android:text="@string/authorize_text"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:textSize="16sp" />
+            android:textSize="16sp" android:onClick="authorizeClick" />
 
     </LinearLayout>
 
