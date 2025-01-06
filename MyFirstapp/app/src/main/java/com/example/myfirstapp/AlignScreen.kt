@@ -25,7 +25,9 @@ class AlignScreen : AppCompatActivity() {
 
     fun topClick (view:View?){
         val bottomContainer = findViewById<RelativeLayout>(R.id.bottom_container)
+        val topContainer = findViewById<RelativeLayout>(R.id.top_container)
         bottomContainer.visibility = View.INVISIBLE
+        topContainer.visibility = View.VISIBLE
     }
     fun centerClick (view:View?){
         val topContainer = findViewById<RelativeLayout>(R.id.top_container)
@@ -35,6 +37,8 @@ class AlignScreen : AppCompatActivity() {
     }
     fun bottomClick (view:View?){
         val topContainer = findViewById<RelativeLayout>(R.id.top_container)
+        val bottomContainer = findViewById<RelativeLayout>(R.id.bottom_container)
         topContainer.visibility = View.INVISIBLE
+        bottomContainer.visibility = View.VISIBLE
     }
 }
