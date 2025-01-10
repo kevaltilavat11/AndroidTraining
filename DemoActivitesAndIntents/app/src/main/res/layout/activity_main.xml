@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Navigate to Grid Screen" />
+            android:text="Navigate to Grid Screen"
+            android:onClick="navigateToGridScreen"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.demoactivitesandintents
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
@@ -12,28 +13,20 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var listView: ListView
-    private lateinit var navigateButton: Button
+
     private val lifecycleLogs = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         listView = findViewById(R.id.lifecycleListView)
-        navigateButton = findViewById(R.id.btnNavigate)
-
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, lifecycleLogs)
         listView.adapter = adapter
 
         logEvent("App in onCreate state")
         Toast.makeText(this, "onCreate finished", Toast.LENGTH_SHORT).show()
-
-        navigateButton.setOnClickListener {
-            val intent = Intent(this, ShowActivityData::class.java)
-            intent.putStringArrayListExtra("logs", ArrayList(lifecycleLogs))
-            startActivity(intent)
-        }
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -68,5 +61,11 @@ class MainActivity : AppCompatActivity() {
         val log = "$event at $timestamp"
         lifecycleLogs.add(log)
         (listView.adapter as ArrayAdapter<*>).notifyDataSetChanged()
+    }
+
+    fun navigateToGridScreen(view: View) {
+        val intent = Intent(this, ShowActivityData::class.java)
+        intent.putStringArrayListExtra("logs", ArrayList(lifecycleLogs))
+        startActivity(intent)
     }
 }
