@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genre_options">
+        <item>Social Science</item>
+        <item>Maths</item>
+        <item>Science</item>
+        <item>English</item>
+        <item>Other</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="dark_gray">#808080</color>
+    <color name="lightBlue">#9213f2</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="_0dp">0dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_14sp">14sp</dimen>
+    <dimen name="_16sp">16sp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_20sp">20sp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
+    <dimen name="_80dp">80dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <string name="add_book">Add Book</string>
+    <string name="add_task">Add Task</string>
+    <string name="adults">Adults</string>
+    <string name="age_groups">Age Groups</string>
+    <string name="app_name">TodoBook</string>
+    <string name="author_name">Author Name</string>
+    <string name="book_list">Book List</string>
+    <string name="book_name">Book Name</string>
+    <string name="children">Children</string>
+    <string name="fiction">Fiction</string>
+    <string name="generation">generation</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="non_fiction">Non-Fiction</string>
+    <string name="select_date">Select Date</string>
+    <string name="teens">Teens</string>
+    <string name="valid_Date">please select date.field cannot be empty</string>
+    <string name="valid_authorName">author name field cannot be empty</string>
+    <string name="valid_bookName">book name field cannot be empty</string>
+    <string name="welcome_to_todo_book_app">Welcome to Todo Book App</string>
+    <style name="Base.Theme.TodoBook" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.TodoBook" parent="Base.Theme.TodoBook"/>
+</resources>

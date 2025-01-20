@@ -13,6 +13,9 @@
         android:theme="@style/Theme.TodoBook"
         tools:targetApi="31">
         <activity
+            android:name=".BookDetails"
+            android:exported="false" />
+        <activity
             android:name=".BookListActivity"
             android:exported="false" />
         <activity
