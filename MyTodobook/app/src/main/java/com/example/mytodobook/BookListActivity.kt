@@ -19,8 +19,9 @@ class BookListActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.rvBookList)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val adapter = BookListAdapter(AddBookActivity.bookList)
+        val adapter = BookListAdapter(AddBookActivity.bookList, this)
         recyclerView.adapter = adapter
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())

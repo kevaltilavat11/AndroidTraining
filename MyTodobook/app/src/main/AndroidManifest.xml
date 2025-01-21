@@ -13,7 +13,10 @@
         android:theme="@style/Theme.MyTodobook"
         tools:targetApi="31">
         <activity
-            android:name=".BookDetails"
+            android:name=".BookDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BookDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".BookListActivity"

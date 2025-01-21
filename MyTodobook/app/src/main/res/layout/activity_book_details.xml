@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookDetailsActivity"
+    android:layout_marginHorizontal="@dimen/_20dp"
+    >
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/book_details"
+        android:textSize="@dimen/_20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="@dimen/_8dp" />
+
+    <ImageView
+        android:id="@+id/ivBookCover"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        android:layout_marginVertical="@dimen/_20sp"
+        android:background="@drawable/rounded_corner_background" />
+
+    <ImageView
+        android:id="@+id/ivBookEdit"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginVertical="@dimen/_20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_edit_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBookCover" />
+
+    <TextView
+        android:id="@+id/tvLabelBookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/book_name1"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:paddingRight="@dimen/_4dp"
+        app:layout_constraintTop_toBottomOf="@id/ivBookEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_20dp" />
+
+
+    <TextView
+        android:id="@+id/tvBookTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintTop_toTopOf="@id/tvLabelBookTitle"
+        app:layout_constraintStart_toEndOf="@id/tvLabelBookTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvLabelBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/author"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:paddingRight="@dimen/_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelBookTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/tvBookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelBookAuthor"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelBookAuthor"
+         />
+
+    <TextView
+        android:id="@+id/tvLabelGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/genre"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:paddingRight="@dimen/_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelBookAuthor"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelGenre"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelGenre"
+         />
+
+    <TextView
+        android:id="@+id/tvLabelAgeGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age_groups1"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:paddingRight="@dimen/_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelGenre"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/tvAgeGroups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelAgeGroups"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelAgeGroups"
+         />
+
+    <TextView
+        android:id="@+id/tvLabelFaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/faction_type"
+        android:textSize="@dimen/_16sp"
+        android:textStyle="bold"
+        android:paddingRight="@dimen/_4dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelAgeGroups"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_16sp" />
+
+    <TextView
+        android:id="@+id/tvFaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/n_a"
+        android:textSize="@dimen/_16sp"
+        app:layout_constraintTop_toTopOf="@+id/tvLabelFaction"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelFaction"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

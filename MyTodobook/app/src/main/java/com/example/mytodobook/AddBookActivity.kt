@@ -49,39 +49,45 @@ class AddBookActivity : AppCompatActivity() {
         val isFiction = if (findViewById<RadioButton>(R.id.rbFiction).isChecked) "Fiction" else "Non-Fiction"
         val selectedAgeGroups = mutableListOf<String>()
 
-        if (findViewById<CheckBox>(R.id.cbChildren).isChecked) {
-            selectedAgeGroups.add("Children")
-        }
-        if (findViewById<CheckBox>(R.id.cbTeens).isChecked) {
-            selectedAgeGroups.add("Teens")
-        }
-        if (findViewById<CheckBox>(R.id.cbAdults).isChecked) {
-            selectedAgeGroups.add("Adults")
+        listOf(
+            R.id.cbChildren to "Children",
+            R.id.cbTeens to "Teens",
+            R.id.cbAdults to "Adults"
+        ).forEach { (id, group) ->
+            if (findViewById<CheckBox>(id).isChecked) {
+                selectedAgeGroups.add(group)
+            }
         }
 
         val bookNameText = bookName.text.toString().trim()
         val authorNameText = authorName.text.toString().trim()
 
-        if (bookNameText.isEmpty() && authorNameText.isEmpty()) {
-            bookName.error = getString(R.string.valid_bookName)
-            authorName.error = getString(R.string.valid_authorName)
-        } else if (bookNameText.isEmpty()) {
-            bookName.error = getString(R.string.valid_bookName)
-        } else if (authorNameText.isEmpty()) {
-            authorName.error = getString(R.string.valid_authorName)
-        } else {
-            bookList.add(
-                Book(
-                    bookNameText,
-                    authorNameText,
-                    selectedDate.text.toString(),
-                    genre,
-                    isFiction,
-                    selectedAgeGroups
+        when {
+            bookNameText.isEmpty() && authorNameText.isEmpty() -> {
+                bookName.error = getString(R.string.valid_bookName)
+                authorName.error = getString(R.string.valid_authorName)
+            }
+            bookNameText.isEmpty() -> {
+                bookName.error = getString(R.string.valid_bookName)
+            }
+            authorNameText.isEmpty() -> {
+                authorName.error = getString(R.string.valid_authorName)
+            }
+            else -> {
+                bookList.add(
+                    Book(
+                        bookNameText,
+                        authorNameText,
+                        selectedDate.text.toString(),
+                        genre,
+                        isFiction,
+                        selectedAgeGroups
+                    )
                 )
-            )
-            val intent = Intent(this, BookListActivity::class.java)
-            startActivity(intent)
+                Intent(this, BookListActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
         }
     }
 
