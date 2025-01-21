@@ -37,6 +37,7 @@ class BookListAdapter(
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, BookDetailsActivity::class.java)
+            intent.putExtra("BOOK_ID", book.id)
             intent.putExtra("BOOK_TITLE", book.bookName)
             intent.putExtra("BOOK_AUTHOR", book.authorName)
             intent.putExtra("GENRE", book.genre)

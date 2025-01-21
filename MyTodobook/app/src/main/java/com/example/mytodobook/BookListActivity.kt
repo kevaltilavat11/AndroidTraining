@@ -1,5 +1,6 @@
 package com.example.mytodobook
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
@@ -40,5 +41,11 @@ class BookListActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
