@@ -48,15 +48,12 @@ class AddBookActivity : AppCompatActivity() {
         val genreSpinner = findViewById<Spinner>(R.id.spGenre)
         val rbFiction = findViewById<RadioButton>(R.id.rbFiction)
         val rbNonFiction = findViewById<RadioButton>(R.id.rbNonFiction)
-
-        val selectedAgeGroups = mutableListOf<String>()
         val checkBoxes = listOf(
             R.id.cbChildren to "Children",
             R.id.cbTeens to "Teens",
             R.id.cbAdults to "Adults"
         )
 
-        // Validate fields
         val bookNameText = bookName.text.toString().trim()
         val authorNameText = authorName.text.toString().trim()
 

@@ -14,13 +14,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Center Top Header -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white">
 
-            <!-- ImageView -->
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
@@ -31,7 +29,6 @@
                 android:paddingLeft="6dp"
                 android:src="@drawable/user" />
 
-            <!-- TextView -->
             <TextView
                 android:id="@+id/header"
                 android:layout_width="wrap_content"
@@ -95,7 +92,6 @@
                 android:textSize="16dp"
                 android:hint="@string/password_text"
                 android:theme="@style/CustomEditText"
-
                 />
         </RelativeLayout>
         <RelativeLayout
@@ -104,7 +100,6 @@
             android:layout_marginHorizontal="12dp"
             >
 
-            <!-- ImageView -->
             <ImageView
                 android:id="@+id/infoImageView"
                 android:layout_width="wrap_content"
