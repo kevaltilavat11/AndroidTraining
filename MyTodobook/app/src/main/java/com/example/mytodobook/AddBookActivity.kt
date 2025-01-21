@@ -45,20 +45,18 @@ class AddBookActivity : AppCompatActivity() {
         val bookName = findViewById<EditText>(R.id.etBookName)
         val authorName = findViewById<EditText>(R.id.etAuthorName)
         val selectedDate = findViewById<EditText>(R.id.etDate)
-        val genre = findViewById<Spinner>(R.id.spGenre).selectedItem.toString()
-        val isFiction = if (findViewById<RadioButton>(R.id.rbFiction).isChecked) "Fiction" else "Non-Fiction"
-        val selectedAgeGroups = mutableListOf<String>()
+        val genreSpinner = findViewById<Spinner>(R.id.spGenre)
+        val rbFiction = findViewById<RadioButton>(R.id.rbFiction)
+        val rbNonFiction = findViewById<RadioButton>(R.id.rbNonFiction)
 
-        listOf(
+        val selectedAgeGroups = mutableListOf<String>()
+        val checkBoxes = listOf(
             R.id.cbChildren to "Children",
             R.id.cbTeens to "Teens",
             R.id.cbAdults to "Adults"
-        ).forEach { (id, group) ->
-            if (findViewById<CheckBox>(id).isChecked) {
-                selectedAgeGroups.add(group)
-            }
-        }
+        )
 
+        // Validate fields
         val bookNameText = bookName.text.toString().trim()
         val authorNameText = authorName.text.toString().trim()
 
@@ -79,19 +77,47 @@ class AddBookActivity : AppCompatActivity() {
                         bookNameText,
                         authorNameText,
                         selectedDate.text.toString(),
-                        genre,
-                        isFiction,
-                        selectedAgeGroups
+                        genreSpinner.selectedItem.toString(),
+                        if (rbFiction.isChecked) "Fiction" else "Non-Fiction",
+                        checkBoxes.filter { findViewById<CheckBox>(it.first).isChecked }
+                            .map { it.second }
                     )
                 )
+
                 Intent(this, BookListActivity::class.java).also {
                     startActivity(it)
                 }
+
+                resetFields(bookName, authorName, selectedDate, genreSpinner, checkBoxes, rbFiction, rbNonFiction)
             }
         }
     }
 
+    private fun resetFields(
+        bookName: EditText,
+        authorName: EditText,
+        selectedDate: EditText,
+        genreSpinner: Spinner,
+        checkBoxes: List<Pair<Int, String>>,
+        rbFiction: RadioButton,
+        rbNonFiction: RadioButton
+    ) {
+        bookName.text.clear()
+        authorName.text.clear()
+        selectedDate.text.clear()
 
+        genreSpinner.setSelection(0)
+
+        checkBoxes.forEach {
+            findViewById<CheckBox>(it.first).isChecked = false
+        }
+
+        rbFiction.isChecked = false
+        rbNonFiction.isChecked = false
+
+        bookName.error = null
+        authorName.error = null
+    }
     fun showDatePicker(view: View) {
         selectDate = findViewById(R.id.etDate)
         val currentDate = Calendar.getInstance()

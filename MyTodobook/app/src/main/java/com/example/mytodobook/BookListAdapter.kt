@@ -9,9 +9,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class BookListAdapter(
-    private val bookList: List<Book>,
+    private val originalBookList: List<Book>, // Original book list
     private val context: Context
 ) : RecyclerView.Adapter<BookListAdapter.BookViewHolder>() {
+
+    private var filteredBookList = originalBookList  // Initially show all books
 
     class BookViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bookName: TextView = itemView.findViewById(R.id.tvBookName)
@@ -27,7 +29,7 @@ class BookListAdapter(
     }
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
-        val book = bookList[position]
+        val book = filteredBookList[position]
         holder.bookName.text = book.bookName
         holder.authorName.text = "Author Name: ${book.authorName}"
         holder.genre.text = "Genre: ${book.genre}"
@@ -44,5 +46,19 @@ class BookListAdapter(
         }
     }
 
-    override fun getItemCount(): Int = bookList.size
+    override fun getItemCount(): Int = filteredBookList.size
+
+    fun filter(query: String) {
+        filteredBookList = if (query.isEmpty()) {
+            originalBookList
+        } else {
+            originalBookList.filter {
+                it.bookName.contains(query, ignoreCase = true) ||
+                        it.authorName.contains(query, ignoreCase = true) ||
+                        it.genre.contains(query, ignoreCase = true)
+            }
+        }
+        notifyDataSetChanged()
+    }
 }
+
