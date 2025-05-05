@@ -24,18 +24,22 @@
 
         <TextView android:text="SSC/HSC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:textStyle="bold"
+            />
         <Spinner
             android:id="@+id/spinnerSsc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:entries="@array/ssc_options" />
 
-        <!-- SSC/HSC SeekBar -->
         <TextView
             android:id="@+id/tvSscPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:textStyle="bold"
             android:text="Percentage: 0%" />
         <SeekBar
             android:id="@+id/seekBarSsc"
@@ -45,23 +49,33 @@
 
         <TextView android:text="BCA/B.COM"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:textStyle="bold"
+            />
         <Spinner
             android:id="@+id/spinnerBca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/bca_options" />
+            android:entries="@array/bca_options"
+            android:paddingVertical="5dp"
+            />
 
         <TextView
             android:id="@+id/tvBcaPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Percentage: 0%" />
+            android:text="Percentage: 0%"
+            android:textStyle="bold"
+            android:paddingVertical="5dp"
+            />
         <SeekBar
             android:id="@+id/seekBarBca"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="100" />
+            android:max="100"
+            android:paddingVertical="5dp"
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnEduSubmit"
