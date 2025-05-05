@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Profile Demo</string>
+    <string-array name="ssc_options">
+        <item>SSC</item>
+        <item>HSC</item>
+    </string-array>
+
+    <string-array name="bca_options">
+        <item>BCA</item>
+        <item>B.COM</item>
+    </string-array>
+    <string name="require_fullName">Full name is required</string>
+    <string name="require_pNumber">Phone number is required</string>
+    <string name="require_email">Valid email is required</string>
+    <string name="require_country">Country is required</string>
+    <string name="require_address">Address is required</string>
+    <string name="require_dob">Date of birth is required</string>
+    <string name="select_gender">Please select a gender</string>
+    <string name="select_hobby">Please select at least one hobby</string>
+</resources>
+
