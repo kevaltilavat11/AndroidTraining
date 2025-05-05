@@ -17,7 +17,10 @@
             android:text="Education Details"
             android:layout_marginVertical="12dp"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:drawableStart="@drawable/ic_education"
+            android:drawablePadding="8dp"
+            />
 
         <TextView android:text="SSC/HSC"
             android:layout_width="match_parent"
