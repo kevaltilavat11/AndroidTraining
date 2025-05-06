@@ -79,8 +79,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (dob.isEmpty()) {
-                etDob.error = getString(R.string.require_dob)
+                Toast.makeText(this, R.string.require_dob, Toast.LENGTH_SHORT).show()
                 isValid = false
+
             }
 
             val genderId = findViewById<RadioGroup>(R.id.rgGender).checkedRadioButtonId
