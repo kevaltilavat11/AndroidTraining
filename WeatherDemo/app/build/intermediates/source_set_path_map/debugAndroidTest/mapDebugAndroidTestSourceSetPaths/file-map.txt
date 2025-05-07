@@ -1,5 +1,0 @@
-com.example.weatherdemo.test.app-core-1.6.1-0 /Users/macm37/.gradle/caches/transforms-3/09892e73db0eca06db80684714b31d5b/transformed/core-1.6.1/res
-com.example.weatherdemo.test.app-androidTest-1 /Users/macm37/Documents/AndroidProjects/WeatherDemo/app/build/generated/res/resValues/androidTest/debug
-com.example.weatherdemo.test.app-mergeDebugAndroidTestResources-2 /Users/macm37/Documents/AndroidProjects/WeatherDemo/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.example.weatherdemo.test.app-mergeDebugAndroidTestResources-3 /Users/macm37/Documents/AndroidProjects/WeatherDemo/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.example.weatherdemo.test.app-debugAndroidTest-4 /Users/macm37/Documents/AndroidProjects/WeatherDemo/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
