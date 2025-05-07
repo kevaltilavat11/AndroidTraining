@@ -1,3 +1,0 @@
-com.example.weatherdemo.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme
