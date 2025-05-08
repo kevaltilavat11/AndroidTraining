@@ -4,8 +4,10 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.location.Geocoder
 import android.os.BatteryManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Locale
 
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -58,10 +61,22 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        mMap.setOnMapClickListener {
-            val marker = MarkerOptions().position(it).title("Bookmarked Location")
-            mMap.addMarker(marker)
-            cities.add(City("Location", it.latitude, it.longitude))
+        mMap.setOnMapClickListener { latLng ->
+            // Reverse geocode to get city name
+            val geocoder = Geocoder(this, Locale.getDefault())
+            var cityName = "Unknown"
+            try {
+                val addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
+                if (!addresses.isNullOrEmpty()) {
+                    cityName = addresses[0].locality ?: addresses[0].subAdminArea ?: addresses[0].adminArea ?: "Unknown"
+                }
+            } catch (e: Exception) {
+                Log.e("GeocoderError", "Failed to get city name", e)
+            }
+
+            Log.d("MapClick", "Map clicked at: Lat=${latLng.latitude}, Lon=${latLng.longitude}, City=$cityName")
+            mMap.addMarker(MarkerOptions().position(latLng).title(cityName))
+            cities.add(City(cityName, latLng.latitude, latLng.longitude))
             adapter.notifyDataSetChanged()
         }
     }

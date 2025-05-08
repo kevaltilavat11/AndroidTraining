@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="12dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <!-- Battery Info -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/batteryPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Battery %" />
+            android:text="100%"
+            android:textSize="18sp"
+            android:paddingEnd="16dp" />
 
         <ImageView
             android:id="@+id/batteryIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/cityList"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_battery_full"
+            />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Google Map -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- RecyclerView for cities -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cityList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
+

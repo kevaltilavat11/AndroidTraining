@@ -18,7 +18,7 @@ interface WeatherService {
     companion object {
         val api: WeatherService by lazy {
             Retrofit.Builder()
-                .baseUrl("http://api.openweathermap.org/")
+                .baseUrl("https://api.openweathermap.org/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(WeatherService::class.java)
