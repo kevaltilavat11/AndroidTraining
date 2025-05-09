@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Weather app</string>
     <string name="battery_status">Battery status icon</string>
+    <string name="delete_city">Delete city</string>
 </resources>
