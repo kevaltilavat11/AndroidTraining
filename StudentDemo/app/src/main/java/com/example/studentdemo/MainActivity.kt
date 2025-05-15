@@ -49,12 +49,10 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        // Update ActionBar and StatusBar color
         val colorHex = preferences.getString("actionbar_color", "#6200EE") ?: "#6200EE"
         supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor(colorHex)))
         window.statusBarColor = Color.parseColor(colorHex)
 
-        // Reload images from the selected folder
         loadImages()
     }
 
@@ -63,16 +61,12 @@ class MainActivity : AppCompatActivity() {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_MEDIA_IMAGES), 100)
                 false
-            } else {
-                true
-            }
+            } else true
         } else {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 100)
                 false
-            } else {
-                true
-            }
+            } else true
         }
     }
 

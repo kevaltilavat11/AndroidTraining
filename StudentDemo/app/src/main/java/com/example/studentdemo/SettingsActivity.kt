@@ -41,6 +41,16 @@ class SettingsActivity : AppCompatActivity() {
         colorSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, colors.keys.toList())
         folderSpinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, folders)
 
+        // Pre-select saved values
+        val savedColorHex = preferences.getString("actionbar_color", "#6200EE")
+        val selectedColorName = colors.entries.find { it.value == savedColorHex }?.key
+        val colorIndex = colors.keys.indexOf(selectedColorName)
+        if (colorIndex != -1) colorSpinner.setSelection(colorIndex)
+
+        val savedFolder = preferences.getString("folder_path", folders[0])
+        val folderIndex = folders.indexOf(savedFolder)
+        if (folderIndex != -1) folderSpinner.setSelection(folderIndex)
+
         findViewById<Button>(R.id.btnSave).setOnClickListener {
             val selectedColor = colors[colorSpinner.selectedItem.toString()] ?: "#6200EE"
             val selectedFolder = folderSpinner.selectedItem.toString()
