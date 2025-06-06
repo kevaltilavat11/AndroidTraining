@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Dog Breed App</string>
+    <string name="search_text">search</string>
+</resources>
